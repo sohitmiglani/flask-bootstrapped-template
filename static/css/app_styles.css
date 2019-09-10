@@ -1,0 +1,26 @@
+p {
+    font-family: "Georgia";
+}
+div#loading {
+width: 35px;
+height: 35px;
+display: none;
+background: url(/static/loader.gif) no-repeat;
+cursor: wait;
+}
+.footer {
+position:relative;
+}
+.footer_text {
+position:absolute;
+bottom:0;
+right:0;
+}
+.vl {
+  border-left:2px solid #000;
+  height:45px;
+  border-color: white;
+  margin-bottom: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+}

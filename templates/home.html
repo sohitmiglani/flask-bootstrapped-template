@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head><title>Your title goes here</title> {% extends "bootstrap/base.html" %}{% block content %}
+<link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/app_styles.css">
+
+<script src="/static/js/app_script.js" type="text/javascript"></script>
+<script src="/static/js/jquery.min.js" type="text/javascript"></script>
+</head>
+
+<body style='background: url(/static/background.png) no-repeat;'>
+
+  <nav class="navbar bg-primary navbar-dark" role="navigation" style='height: 45px'>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/bug">Report a bug</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+        <p style='position:absolute; top:12px;right:20px; color:white'><b><u> Version:</u></b>  {{version}}</p>
+    </nav>
+
+            <p style='color:red; text-align:center; margin: 0 auto; width:500px; margin-top: 20px'>
+            {% with messages = get_flashed_messages() %}
+               {% if messages %}
+                  {% for message in messages %}
+                     {{ message }}
+                  {% endfor %}
+               {% endif %}
+            {% endwith %}
+            </p>
+
+            <form action="" class="container" enctype="multipart/form-data" method="post">
+
+                <!-- Based on the 'status' variable, different parts of the content below will show up. The content has been
+                precoded to show up sequentially and the next piece of content will not show up if an error occured during the
+                'POST' action-->
+
+                <div style='text-align:center; margin: 0 auto; width:410px; padding: 5px;border-radius: 10px'
+                class="d-block navbar-dark bg-primary text-white" id="content">
+                <div style='text-align:center; margin: 0 auto; width:400px; padding: 5px;border-radius: 10px; background-color: white'
+                class="d-block navbar-dark bg-primary text-white" id="content">
+
+
+                {% if status == 'not_connected' %} <!-- Collecting Initial GSM credentials -->
+                    <h3 style='color:grey'> Log in here! </h1>
+
+                    <input required id='user_id' class="w3-input w3-border w3-round tour-step tour-step-one" name="user_id"
+                    placeholder="Your Username" style="height:35px; width:80%; color:black; display:inline-block;
+                    border-radius: 10px; margin-bottom: 10px"><br>
+
+                    <input required class="w3-input w3-border w3-round tour-step tour-step-two" name="password" type='password' placeholder="Password" style="height:35px; width:80%; color:black;display:inline-block; border-radius: 10px"> <br><br>
+
+                    <input name="file" style="display:inline-block ; width:60%; color:black" type="file"> <br><br>
+
+                    <button class="btn btn-success" name='action' style="font-size:100%; width:40%; height:35px;
+                    border-radius: 5px" value='action_1' type="submit" onclick="loading();">
+                    Retrieve Metadata</button>
+
+                    <div id="loading" style='text-align:center; margin: 0 auto; margin-top: 20px'></div>
+
+
+                {% elif status == 'connected' %}
+                   <p style='color:black'>
+                   You are successfully connected. Here is the login data: {{login_data}} <br><br>
+                   Here is the output data: {{output_data}} <br><br></p>
+
+                {% endif %}
+
+              </div></div><br>
+            </form>
+{% endblock %}
+    </body>
+</html>
