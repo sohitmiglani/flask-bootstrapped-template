@@ -1,5 +1,4 @@
 *.html linguist-detectable=false
+*.java linguist-detectable=true
 *.python linguist-detectable=true
 *.node linguist-detectable=true
-
-static linguist-detectable=false
