@@ -1,4 +1,4 @@
-# Bootstrapped Template in Flask
+# Bootstrapped Flask Template for RNA-seq data analysis
 
 A template for building visualisation and analysis apps of RNA-seq data in Flask. 
 
