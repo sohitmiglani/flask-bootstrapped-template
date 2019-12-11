@@ -2,16 +2,17 @@
 
 A template for building visualisation and analysis apps of RNA-seq data in Flask. 
 
-Update as of 15th October 2019: The app is currently a template and has not been equipped with Machine Learning yet.
+Update as of 15th November 2019: The app is currently functional. It can accept transcript count data, perform machine learning and produce visualisations.
 
 ## Deploying the application
 
 Step 1. Clone the repository using the command: 
-```python
+```terminal
 git clone https://github.com/sohitmiglani/flask-bootstrapped-template
 ```
 Step 2. CD into the cloned repository and run the command: 
-```python
+```terminal
+cd flask-bootstrapped-template
 python flask_app.py
 ```
 
