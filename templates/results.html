@@ -45,13 +45,100 @@
 
                 <h2 style='color:#1463BD'><font face="garamond"> Quality Check using Machine Learning </font> </h2>
 
-                <img src='/static/images/ml_plot.png' alt='Output of the Dimensionality Reduction Clustering' style='border-radius: 10px; height: 450px; width: 550px'/>
+                  <img src='/static/images/ml_plot.png' alt='Output of the Dimensionality Reduction Clustering'
+                  style='border-radius: 10px; height: 450px; width: 550px'/>
+                  <br><br>
+                  <p style='color:grey'><font face="garamond">
+                    By plotting the two dominant components of the gene distributions in each sample, we check the similarity of the samples. <br>
+                    If a sample does not form a cluster with the rest of the samples, it may have a lab error or sequencing error.<br><br>
+
+                    <b>Results from the PCA analysis:</b> <br>
+                    1. Variance Ratio of the first component: {{first_var}} %<br>
+                    2. Variance Ratio of the second component: {{second_var}} %<br>
+                  </font> </p>
+
                 <br><br>
-                <hr>
+                <hr style='background-color: #1463BD; height: 2px'>
                 <h2 style='color:#1463BD'><font face="garamond"> Data Visualisations </font> </h2>
-                <img src='/static/images/scatter.png' alt='Gene Count Distributions' style='border-radius: 10px; height: 450px; width: 550px; display:inline-block'/>
-                <img src='/static/images/box_plot.png' alt='Box Plots' style='border-radius: 10px; height: 450px; width: 550px; display:inline-block'/>
-                <img src='/static/images/median_plot.png' alt='Median Plots' style='border-radius: 10px; height: 450px; width: 550px; display:inline-block'/>
+
+              <div style='height: 500px; width: 550px; text-align: center; margin: 0 auto; display:inline-block'>
+
+                <img src='/static/images/scatter.png' alt='Gene Count Distributions'
+                style='border-radius: 10px; height: 450px; width: 550px; display:inline-block'/>
+                <br><br>
+                <p style='color:grey'><font face="garamond">
+                  By comparing the distributions and identifying areas where the genes have clustered,<br>
+                  we can infer particular samples that have a significant change in its gene expression.
+                </font> </p>
+              </div>
+
+              <div style='height: 500px; width: 550px; text-align: center; margin: 0 auto; display:inline-block'>
+
+                <img src='/static/images/box_plot.png' alt='Box Plots'
+                style='border-radius: 10px; height: 450px; width: 550px; display:inline-block'/>
+                <br><br>
+                <p style='color:grey'><font face="garamond">
+                  The box plots also help us compare the general distribution of the gene counts.
+                  Specifically, it helps us compare the means and the confidence intervals of the gene count distributions.
+
+                </font> </p>
+              </div> <br> <br>
+                <hr style='text-align: center; margin: 0 auto; background-color: #1463BD; height: 2px; width: 80%'>
+                <br>
+
+                <div style='height: 500px; width: 550px; text-align: center; margin: 0 auto; display:inline-block'>
+
+                  <img src='/static/images/median_plot.png' alt='Median Plots'
+                  style='border-radius: 10px; height: 450px; width: 550px; display:inline-block'/>
+                  <br><br>
+                  <p style='color:grey'><font face="garamond">
+                    By comparing the median gene counts for samples in different conditions, we can infer whether there
+                    is a significant overexpression or underexpression in one of the conditions.
+
+                  </font> </p>
+                </div>
+
+                <div style='height: 500px; width: 550px; text-align: center; margin: 0 auto; display:inline-block'>
+
+                  <img src='/static/images/volcano.png' alt='Median Plots'
+                  style='border-radius: 10px; height: 450px; width: 550px; display:inline-block'/>
+                  <br><br>
+                  <p style='color:grey'><font face="garamond">
+                    By understanding the balance between the log-fold change and the p-values, we can infer valuable causal relationships
+                    between the given condition and the average gene expression.
+
+                  </font> </p>
+                </div>
+
+                <br><br>
+                <hr style='text-align: center; margin: 0 auto; background-color: #1463BD; height: 2px; width: 100%'>
+                <br> <h2 style='color:#1463BD'><font face="garamond"> Filtering and Mapping Outlier Genes </font> </h2>
+
+                <p style='color:grey'><font face="garamond">
+                  Number of Filtered Genes in the dataset with p-value < 0.05 and mod(log-fold change) > 2 are: {{filtered_num}}
+
+                </font> </p>
+
+                <div style='height: 500px; width: 550px; text-align: center; margin: 0 auto; display:inline-block'>
+
+                  <img src='/static/images/gene_map.png' alt='Median Plots'
+                  style='border-radius: 10px; height: 450px; width: 550px; display:inline-block'/>
+                  <br><br>
+                  <p style='color:grey'><font face="garamond">
+                    By understanding the differences between the gene counts for the filtered genes, we can identify any faults or problems with the most outlying genes.
+
+                  </font> </p>
+                </div>
+
+                <div style='height: 500px; width: 550px; text-align: center; margin: 0 auto; display:inline-block'>
+
+                  <img src='/static/images/heatmap.png' alt='Median Plots'
+                  style='border-radius: 10px; height: 450px; width: 550px; display:inline-block'/>
+                  <br><br>
+                  <p style='color:grey'><font face="garamond">
+                    Visualising the gene counts as a heat map helps us understand the relative variation of the gene counts across all the samples.
+                  </font> </p>
+                </div>
 
                 </div>
 

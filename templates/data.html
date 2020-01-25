@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head><title>Atlantis</title> {% extends "bootstrap/base.html" %}{% block content %}
+<link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/app_styles.css">
+<script src="/static/js/app_script.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+  <nav class="navbar bg-primary navbar-dark" role="navigation" style='height: 45px; border-radius: 0px; background-color: #1463BD'>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li style='margin-right: 5px'><font face="garamond" size="6"> Atlantis: RNA-seq visualisation </font></li>
+                <li style='border-left: solid #FFFFFF; color:#1463BD'><font face="garamond" size="6">_</font></li>
+          </div>
+        </div>
+      </div>
+
+        <p style='position:absolute; top:12px;right:20px; color:white'><b><u> Version:</u></b>  {{version}}</p>
+    </nav>
+
+            <p style='color:red; text-align:center; margin: 0 auto; width:500px; margin-top: 20px'>
+            {% with messages = get_flashed_messages() %}
+               {% if messages %}
+                  {% for message in messages %}
+                     {{ message }}
+                  {% endfor %}
+               {% endif %}
+            {% endwith %}
+            </p>
+
+
+            <form action="" class="container" enctype="multipart/form-data" method="post">
+                <!-- Based on the 'status' variable, different parts of the content below will show up. The content has been
+                precoded to show up sequentially and the next piece of content will not show up if an error occured during the
+                'POST' action-->
+
+                <div style='text-align: center; margin: 0 auto; padding: 5px; border-radius: 10px; background-color: #1463BD; border-radius: 10px'
+                class="d-block navbar-dark bg-primary text-white" id="content">
+                <div style='text-align:center; margin: 0 auto; padding: 10px;border-radius: 10px; background-color: white'
+                class="d-block navbar-dark bg-primary text-white" id="content">
+
+                <h2 style='color:#1463BD'><font face="garamond"> Data Instructions for Atlantis! </font> </h2>
+                <h4 style='color:black'><font face="garamond">
+                For your data section, upload a CSV with the following columns: <br><br> </h4>
+                <h4 style='color:grey'><font face="garamond">
+                1. Sample1, Sample2, Sample3 ... etc. (Each Sample must be labelled in the format Sample'i'). <br>
+                2. gene which denotes the gene name. <br>
+                3. log2f which denotes the log fold change.<br>
+                4. se which denotes the standard error.<br>
+                5. p_values which denotes the p_values for the differential expression of that gene. <br><br>
+
+                <hr style='text-align: center; margin: 0 auto; background-color: #1463BD; height: 2px; width: 100%'>
+
+                <h2 style='color:#1463BD'><font face="garamond"> Data Annotation Instructions for Atlantis! </font> </h2>
+                <h4 style='color:black'><font face="garamond">
+                For your data section, upload a CSV with the two columns: <br><br><h4>
+                <h4 style='color:grey'><font face="garamond">
+                1. Sample: This column should contain the name of the samples in order. Eg. Sample1, Sample2, Sample3, Sample4 etc. <br>
+                2. Condition: This column should contain the numerical indication of the condition that the sample was placed in. Eg. 1, 2, 3 etc.
+
+                </font></h4>
+
+
+                </div> </div>
+
+              <br>
+              </form>
+{% endblock %}
+    </body>
+</html>
