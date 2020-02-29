@@ -13,6 +13,9 @@ git clone https://github.com/sohitmiglani/flask-bootstrapped-template
 Step 2. CD into the cloned repository and run the command: 
 ```terminal
 cd flask-bootstrapped-template
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
 python flask_app.py
 ```
 
