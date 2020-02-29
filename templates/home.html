@@ -1,26 +1,12 @@
 <!DOCTYPE html>
 <html>
+<link rel="icon" href="/static/images/icon.png">
 <head><title>Atlantis</title> {% extends "bootstrap/base.html" %}{% block content %}
 <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
 <link rel="stylesheet" href="/static/css/app_styles.css">
-<script src="/static/js/app_script.js" type="text/javascript"></script>
 </head>
 
-<body>
-
-  <nav class="navbar bg-primary navbar-dark" role="navigation" style='height: 45px; border-radius: 0px; background-color: #1463BD'>
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li style='margin-right: 5px'><font face="garamond" size="6"> Atlantis: RNA-seq visualisation </font></li>
-                <li style='border-left: solid #FFFFFF; color:#1463BD'><font face="garamond" size="6">_</font></li>
-          </div>
-        </div>
-      </div>
-
-        <p style='position:absolute; top:12px;right:20px; color:white'><font face="garamond" size="4"><b><u> Version:</u></b>  {{version}} </font></p>
-    </nav>
+<body style="background-image: url('/static/images/gene.jpg');">
 
             <p style='color:red; text-align:center; margin: 0 auto; width:500px; margin-top: 20px'>
             {% with messages = get_flashed_messages() %}
@@ -32,32 +18,31 @@
             {% endwith %}
             </p>
 
-            <form class="container" enctype="multipart/form-data" method="post">
+            <form class="container" enctype="multipart/form-data" method="post" style='text-align:center; margin: 0 auto'>
                 <!-- Based on the 'status' variable, different parts of the content below will show up. The content has been
                 precoded to show up sequentially and the next piece of content will not show up if an error occured during the
                 'POST' action-->
 
-                <div style='text-align:center; margin: 0 auto; width:610px; padding: 5px;border-radius: 10px; height: 350px; background-color: #1463BD'
-                class="d-block navbar-dark bg-primary text-white" id="content">
-                <div style='text-align:center; margin: 0 auto; width:600px; padding: 5px;border-radius: 10px; background-color: white; height: 340px'
-                class="d-block navbar-dark bg-primary text-white" id="content">
+                    <h1 style='color:white'><font face="garamond"> Welcome to Atlantis! </font> </h1>
+                    <hr style='width: 50%; text-align:center; margin: 0 auto'>
+                    <h4 style='color:white'><font face="garamond">An automated web-app that can analyse and visualise RNA-seq data.</font></h4>
+                    <h4 style='color:white'><font face="garamond"> Click <a href='/data' target='_blank' style='color: grey'> here </a> for data instructions. </font></h4>
+                    <hr style='width: 25%; text-align:center; margin: 0 auto'> <br>
 
-                    <h2 style='color:#1463BD'><font face="garamond"> Welcome to Atlantis! </font> </h2>
-                    <h4 style='color:grey'><font face="garamond">An automated web-app that can <br> analyse and visualise RNA-seq data.</font></h4>
-                    <h4 style='color:grey'><font face="garamond"> Click <a href='/data' target='_blank' style='color: blue'> here </a> for data instructions. </font></h4>
-                    <hr>
+                    <p style='color:white; display:inline-block; margin-left: 20px;border-radius: 10px'><font face="garamond">Upload Data: </font></p>
+                    <input type='file' name="metadata" id="metadata"
+                    style='text-align:center; margin: 0 auto; color: white; width: 20%; display:inline-block; margin-left: 20px; border-radius: 10px' /><br>
 
-                    <p style='color:grey; display:inline-block'><font face="garamond">Upload Data: </font></p>
-                    <input type='file' name="metadata" id="metadata" style='text-align:center; margin: 0 auto; color: black; width: 50%; display:inline-block' /><br>
-                      <p style='color:grey; display:inline-block'><font face="garamond">Upload Annotation: </font></p>
-                    <input type='file' name="annotation" id="annotation" style='text-align:center; margin: 0 auto; color: black; width: 50%; display:inline-block' />
-                     <br>
+                    <p style= 'color:white; display:inline-block'><font face="garamond">Upload Annotation: </font></p>
+                    <input type='file' name="annotation" id="annotation"
+                    style='text-align:center; margin: 0 auto; color: white; width: 20%; display:inline-block; border-radius: 10px' /><br>
 
-                    <br><button type="submit" name='submit_button' class="btn btn-success" value='submit_data' style="font-size:100%; width:40%; height:35px;
-                    border-radius: 5px" onclick="loading();">
-                    Submit Metadata</button> </div></div>
+                    <br><button type="submit" name='submit_button' class="btn btn-success" value='submit_data' style="font-size:100%; width:20%; height:40px;
+                    border-radius: 5px; font-size: 20px" onclick="loading();">
+                    Submit Data</button> <br>
+
                     <br>
-                <h6 style='color:black; text-align:center; margin: 0 auto'><font face="garamond"> <b>Developer:</b> Sohit Miglani, Minerva Schools at KGI</font></h6>
+                <h6 style='color:white; text-align:center; margin: 0 auto'><font face="garamond"> <b>Developer:</b> Sohit Miglani, Minerva Schools at KGI</font></h6>
               </form>
 {% endblock %}
     </body>

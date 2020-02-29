@@ -47,7 +47,14 @@ def home():
 
 @app.route("/results", methods=["GET", "POST"])
 def results():
+    if request.method == "POST":
+        if request.form['submit_button'] == 'go_back':
+            return redirect(url_for('home'))
+
     return render_template('results.html',
+                            initial_number = session['initial_number'],
+                            final_number = session['final_number'],
+                           stats = session['stats'],
                            version=__version__,
                            first_var = session['first_var'],
                            second_var = session['second_var'],
@@ -55,9 +62,11 @@ def results():
 
 @app.route("/data", methods=["GET", "POST"])
 def data():
+    if request.method == "POST":
+        if request.form['submit_button'] == 'go_back':
+            return redirect(url_for('home'))
+
     return render_template('data.html')
-
-
 
 @app.after_request
 def add_header(r):

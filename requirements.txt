@@ -1,0 +1,6 @@
+flask
+flask_bootstrap
+pandas
+seaborn
+sklearn
+
