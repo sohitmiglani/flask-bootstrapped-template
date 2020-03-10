@@ -1,8 +1,6 @@
 # Bootstrapped Flask Template for RNA-seq data analysis
 
-A template for building visualisation and analysis apps of RNA-seq data in Flask. 
-
-Update as of 15th November 2019: The app is currently functional. It can accept transcript count data, perform machine learning and produce visualisations.
+A template for building visualisation and analysis apps of pre-clininal trials data in Flask. One can easily clone the application and personalise it to produce visualisations or perform analysis as they prefer.
 
 ## Deploying the application
 
