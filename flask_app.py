@@ -85,3 +85,6 @@ def page_not_found(e):
     # the flash utlity flashes a message that can be shown on the main HTML page
     flash('The URL you entered does not exist. You have been redirected to the home page')
     return redirect(url_for('home'))
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000)
