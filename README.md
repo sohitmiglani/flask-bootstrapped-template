@@ -1,6 +1,8 @@
-# Bootstrapped Flask Template for RNA-seq data analysis
+# 'Atlantis' - Bootstrapped Flask Template for RNA-seq data analysis
 
 A template for building visualisation and analysis apps of pre-clininal trials data in Flask. One can easily clone the application and personalise it to produce visualisations or perform analysis as they prefer.
+
+This application is accompanied by tutorial videos that help a user understand the code, deploy the application, edit and tailor the application to their own needs. The video tutorials can be found [here.](https://www.youtube.com/playlist?list=PLJSw-40RAjgdUi4hF3cAUPD6mtgF-MKiJ)
 
 ## Deploying the application
 
