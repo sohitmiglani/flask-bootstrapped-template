@@ -4,7 +4,7 @@ A template for building visualisation and analysis apps of pre-clininal trials d
 
 ## Deploying the application
 
-Step 1: Make sure to have Github and Python installed on your system. To install Python on your system, follow the instructions ![here](https://realpython.com/installing-python/). To install Github, follow the instructions ![here](https://gist.github.com/derhuerst/1b15ff4652a867391f03).
+Step 1: Make sure to have Github and Python installed on your system. To install Python on your system, follow the instructions [here](https://realpython.com/installing-python/). To install Github, follow the instructions [here](https://gist.github.com/derhuerst/1b15ff4652a867391f03).
 
 Step 2. Clone the repository using the command: 
 ```terminal
