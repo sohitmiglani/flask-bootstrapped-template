@@ -11,7 +11,7 @@ git clone https://github.com/sohitmiglani/flask-bootstrapped-template
 Step 2. CD into the cloned repository and run the deployment script: 
 ```terminal
 cd flask-bootstrapped-template
-./deploy.sh
+bash deploy.sh
 ```
 
 The application is now functioning on your local computer server. Go to a browser and log into 'localhost:5000' to start working with your application.
