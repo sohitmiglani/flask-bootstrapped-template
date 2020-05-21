@@ -4,6 +4,8 @@ A template for building visualisation and analysis apps of pre-clininal trials d
 
 This application is accompanied by tutorial videos that help a user understand the code, deploy the application, edit and tailor the application to their own needs. The video tutorials can be found [here.](https://www.youtube.com/playlist?list=PLJSw-40RAjgdUi4hF3cAUPD6mtgF-MKiJ)
 
+A working version of the application can be tested here: https://atlantis-minerva.herokuapp.com/
+
 ## Deploying the application
 
 Step 1: Make sure to have Github and Python installed on your system. To install Python on your system, follow the instructions [here](https://realpython.com/installing-python/). To install Github, follow the instructions [here](https://gist.github.com/derhuerst/1b15ff4652a867391f03).
