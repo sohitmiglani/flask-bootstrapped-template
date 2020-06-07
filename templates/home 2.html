@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" href="/static/images/icon.png">
+<head><title>Atlantis</title> {% extends "bootstrap/base.html" %}{% block content %}
+<link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/app_styles.css">
+</head>
+
+<body style="background-image: url('/static/images/gene.jpg');">
+
+            <p style='color:red; text-align:center; margin: 0 auto; width:500px; margin-top: 20px'>
+            {% with messages = get_flashed_messages() %}
+               {% if messages %}
+                  {% for message in messages %}
+                     {{ message }}
+                  {% endfor %}
+               {% endif %}
+            {% endwith %}
+            </p>
+
+            <form class="container" enctype="multipart/form-data" method="post" style='text-align:center; margin: 0 auto'>
+                <!-- Based on the 'status' variable, different parts of the content below will show up. The content has been
+                precoded to show up sequentially and the next piece of content will not show up if an error occured during the
+                'POST' action-->
+
+                    <h1 style='color:white'><font face="garamond"> Welcome to Atlantis! </font> </h1>
+                    <hr style='width: 50%; text-align:center; margin: 0 auto'>
+                    <h4 style='color:white'><font face="garamond">An automated web-app that can analyse and visualise RNA-seq data.</font></h4>
+                    <h4 style='color:white'><font face="garamond"> Click <a href='/data' target='_blank' style='color: grey'> here </a> for data instructions. </font></h4>
+                    <hr style='width: 25%; text-align:center; margin: 0 auto'> <br>
+
+                    <p style='color:white; display:inline-block; margin-left: 20px;border-radius: 10px'><font face="garamond">Upload Data: </font></p>
+                    <input type='file' name="metadata" id="metadata"
+                    style='text-align:center; margin: 0 auto; color: white; width: 20%; display:inline-block; margin-left: 20px; border-radius: 10px' /><br>
+
+                    <p style= 'color:white; display:inline-block'><font face="garamond">Upload Annotation: </font></p>
+                    <input type='file' name="annotation" id="annotation"
+                    style='text-align:center; margin: 0 auto; color: white; width: 20%; display:inline-block; border-radius: 10px' /><br>
+
+                    <br><button type="submit" name='submit_button' class="btn btn-success" value='submit_data' style="font-size:100%; width:20%; height:40px;
+                    border-radius: 5px; font-size: 20px" onclick="loading();">
+                    Submit Data</button> <br>
+
+                    <br>
+                <h6 style='color:white; text-align:center; margin: 0 auto'><font face="garamond"> <b>Developer:</b> Sohit Miglani, Minerva Schools at KGI</font></h6>
+              </form>
+{% endblock %}
+    </body>
+</html>
