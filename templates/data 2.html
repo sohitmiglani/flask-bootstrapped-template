@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" href="/static/images/icon.png">
+<head><title>Atlantis</title> {% extends "bootstrap/base.html" %}{% block content %}
+<link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/app_styles.css">
+</head>
+
+<body style="background-image: url('/static/images/gene.jpg');"> <br>
+
+      <form action="" class="container" enctype="multipart/form-data" method="post">
+          <!-- Based on the 'status' variable, different parts of the content below will show up. The content has been
+          precoded to show up sequentially and the next piece of content will not show up if an error occured during the
+          'POST' action-->
+
+          <div style='padding: 5px; width: 900px; border-radius: 10px; background-color: rgba(20, 99, 189, 0.75); border-radius: 10px'
+          class="d-block navbar-dark bg-primary text-white" id="content">
+          <div style='padding: 20px;border-radius: 10px; background-color: white'
+          class="d-block navbar-dark bg-primary text-white" id="content">
+          <font face="garamond">
+
+          <h2 style='color:#1463BD'> Data Instructions for Atlantis! </h2>
+          <h5 style='color:black'>
+          For your data section, upload a CSV with the following columns: <br> </h5>
+          <h6 style='color:grey'>
+          <li>  All the sample names (Any column that is not labelled 'gene', 'log2f' or 'p_values' will be taken as a Sample.). </li>
+          <li>'gene' which denotes the gene name.</li><br></h6>
+
+          <h5 style='color:#1463BD'>Optional fields:  </h5>
+
+          <h6 style='color:grey'>
+          <li> log2f which denotes the log fold change.</li>
+          <li> p_values which denotes the p_values for the differential expression of that gene. </li><br></h6>
+
+          <hr style='text-align: center; margin: 0 auto; background-color: #1463BD; height: 2px; width: 100%'>
+
+          <h2 style='color:#1463BD'>Data Annotation Instructions for Atlantis! </h2>
+          <h5 style='color:black'>
+          For your data section, upload a CSV with the two columns:<br><h5>
+          <h6 style='color:grey'>
+          <li> Sample Name: This column should contain all the corresponding sample names. </li>
+          <li> Condition: This column should contain the numerical indication of the condition that the sample was placed in. Eg. 1, 2, 3 etc. </li>
+
+        </font></h6>
+
+        <button type="submit" name='submit_button' class="btn btn-success" value='go_back' style="font-size:100%; width:10%; height:35px;
+        border-radius: 5px; font-size: 15px">
+        Go Back</button>
+
+          </div> </div>
+
+        <br>
+        </form>
+{% endblock %}
+    </body>
+</html>

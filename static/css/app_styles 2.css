@@ -1,0 +1,10 @@
+p {
+    font-family: "Georgia";
+}
+div#loading {
+width: 35px;
+height: 35px;
+display: none;
+background: url(/static/loader.gif) no-repeat;
+cursor: wait;
+}
